@@ -1,4 +1,4 @@
-//% weight=45 color=#0011A0 icon="\uf080" block="Calli:CO2"
+//% weight=45 color=#0011A0 icon="\uf080" block="Calli:Air"
 namespace co2Sensor {
 
     let ledColorList = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
