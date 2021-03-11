@@ -31,7 +31,7 @@ namespace co2Sensor {
         }
     }
     
-    //% block="CO2-Wert"
+    //% block="CO2-Wert (ppm)"
     export function co2 () : number {
         let co2: number;
         let average: number;
@@ -78,7 +78,7 @@ namespace co2Sensor {
         return co2;
     }
 
-    //% block="Temperatur"
+    //% block="Temperatur (°C)"
     export function temperatur() : number {
         let wbuffer = pins.createBuffer(1)
         wbuffer[0] = 9;
@@ -88,7 +88,7 @@ namespace co2Sensor {
         return temp;
     }
 
-    //% block="Feuchte"
+    //% block="Feuchte (%)"
     export function humidy() : number {
         let wbuffer = pins.createBuffer(1)
         wbuffer[0] = 5;
@@ -98,7 +98,7 @@ namespace co2Sensor {
         return temp;
     }
 
-    //% block="Druck"
+    //% block="Druck (mbar)"
     export function pressure() : number {
         let wbuffer = pins.createBuffer(1)
         wbuffer[0] = 7;
