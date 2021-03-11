@@ -211,7 +211,7 @@ namespace co2Sensor {
         pins.i2cWriteBuffer(0x23, buffer);
     }
 
-    //% block="Messintervall= $newInterval"
+    //% block="Messintervall= $newInterval s"
     //% advanced = true
     export function co2Interval(newInterval: number){
         if ((newInterval > 0) && (newInterval <= 60)){   // Intervals between 1 and 60 allowed(seconds)
