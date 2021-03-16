@@ -183,6 +183,9 @@ namespace co2Sensor {
         let colBuffer = pins.createBuffer(4);
         let bufferCount = 1;
         buffer[0] = 0;
+        if ((ledBrightness < 6) && (ledBrightness != 0)){
+            ledBrightness = 6;
+        }
         for (let counter = 1; counter < 10; counter ++){
                 colBuffer.setNumber(NumberFormat.Int32BE, 0, ledColorList[counter]);
                 buffer[bufferCount] = Math.trunc(colBuffer[1] * ledBrightness / 100);
