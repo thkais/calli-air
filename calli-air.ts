@@ -159,13 +159,11 @@ namespace co2Sensor {
     export function ledColor(ledNumber : number, color : number) {
        if ((ledNumber > 0)&&(ledNumber <10)){
            ledColorList[ledNumber] = color;
-
        }
     }
 
     //% block="Setze LED $ledNumber auf Farbe $color"
     export function writeLedColor(ledNumber: number, color: number){
-
         let buffer = pins.createBuffer(4);
 
         if ((ledNumber > 0)&&(ledNumber <10)){
@@ -183,6 +181,9 @@ namespace co2Sensor {
         let colBuffer = pins.createBuffer(4);
         let bufferCount = 1;
         buffer[0] = 0;
+        if (ledBrightness < 0){
+            ledBrightness = 0;
+        }
         if ((ledBrightness < 6) && (ledBrightness != 0)){
             ledBrightness = 6;
         }
