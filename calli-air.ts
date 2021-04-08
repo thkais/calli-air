@@ -1,4 +1,4 @@
-//0.0.7
+//0.0.8
 //% weight=45 color=#0011A0 icon="\uf080" block="Calli:Air"
 namespace co2Sensor {
 
@@ -121,6 +121,7 @@ namespace co2Sensor {
 
     //% block="Zeige LED-Balken mit $ledNumber LEDs, Helligkeit $ledBrightness"
     export function showBar (ledNumber : number, ledBrightness : number ){
+        co2Init();
         ledNumber = Math.trunc(ledNumber);
         if (ledNumber < 1)          // minimum 1 LED
             ledNumber = 1;
@@ -172,7 +173,7 @@ namespace co2Sensor {
     //% advanced=true
     export function writeLedColor(ledNumber: number, color: number){
         let buffer = pins.createBuffer(4);
-
+        co2Init();
         if ((ledNumber > 0)&&(ledNumber <10)){
             ledColorList[ledNumber] = color;
             buffer.setNumber(NumberFormat.Int32BE, 0, color);
@@ -188,6 +189,7 @@ namespace co2Sensor {
         let buffer = pins.createBuffer(28);
         let colBuffer = pins.createBuffer(4);
         let bufferCount = 1;
+        co2Init();
         buffer[0] = 0;
         if (ledBrightness < 0){
             ledBrightness = 0;
