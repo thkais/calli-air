@@ -1,4 +1,4 @@
-//0.0.6
+//0.0.7
 //% weight=45 color=#0011A0 icon="\uf080" block="Calli:Air"
 namespace co2Sensor {
 
@@ -111,6 +111,8 @@ namespace co2Sensor {
     }
     //% block="Status-LED $newState"
     //% zustand.shadow="toggleOnOff"
+    //% weight=10
+    //% advanced=true
     export function statAnz (newState: boolean){
         statusLed = newState;
         if ((statusLed == true) && (newState == false))
@@ -157,6 +159,7 @@ namespace co2Sensor {
     }
 
     //% block="LED $ledNumber|Farbe $color"
+    //% weight=220
     //% advanced=true
     export function ledColor(ledNumber : number, color : number) {
        if ((ledNumber > 0)&&(ledNumber <10)){
@@ -164,7 +167,9 @@ namespace co2Sensor {
        }
     }
 
-    //% block="Setze LED $ledNumber auf Farbe $color"
+    //% block="Setze LED $ledNumber direkt auf Farbe $color"
+    //% weight=190
+    //% advanced=true
     export function writeLedColor(ledNumber: number, color: number){
         let buffer = pins.createBuffer(4);
 
@@ -177,6 +182,7 @@ namespace co2Sensor {
     }
 
     //% block="Zeige LEDs an mit Helligkeit $ledBrightness"
+    //% weight=200
     //% advanced=true
     export function ledShow(ledBrightness : number){
         let buffer = pins.createBuffer(28);
@@ -200,6 +206,7 @@ namespace co2Sensor {
     }
     
     //% block="Druckkompensation= $pressure mBar"
+    //% weight=100
     //% advanced = true
     export function pressCompensation(pressure: number){
         let buffer = pins.createBuffer(3);
@@ -218,6 +225,7 @@ namespace co2Sensor {
     }
 
     //% block="Messintervall= $newInterval s"
+    //% weight=170
     //% advanced = true
     export function co2Interval(newInterval: number){
         if ((newInterval > 0) && (newInterval <= 60)){   // Intervals between 1 and 60 allowed(seconds)
@@ -232,6 +240,7 @@ namespace co2Sensor {
     }
 
     //% block="LED-Abschaltung nach $timeout s"
+    //% weight=180
     //% advanced = true
     export function co2LedTimeout(timeout: number){
         let buffer = pins.createBuffer(2);
@@ -245,6 +254,7 @@ namespace co2Sensor {
     }
 
     //% block="CO2 Fehler"
+    //% weight=30
     //% advanced = true
     export function co2Error(): boolean{
         if (errCounter > errLimit){
