@@ -1,3 +1,4 @@
+//0.0.6
 //% weight=45 color=#0011A0 icon="\uf080" block="Calli:Air"
 namespace co2Sensor {
 
@@ -28,6 +29,7 @@ namespace co2Sensor {
         if (init == 0){
             init = 1;
             co2Interval(2);
+            co2LedTimeout(2);
         }
     }
     
@@ -88,7 +90,7 @@ namespace co2Sensor {
         return temp;
     }
 
-    //% block="Feuchte (%)"
+    //% block="Feuchte (\\%)"
     export function humidy() : number {
         let wbuffer = pins.createBuffer(1)
         wbuffer[0] = 5;
