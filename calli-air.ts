@@ -1,4 +1,4 @@
-//0.0.8
+//0.0.9
 //% weight=45 color=#0011A0 icon="\uf080" block="Calli:Air"
 namespace co2Sensor {
 
@@ -29,7 +29,7 @@ namespace co2Sensor {
         if (init == 0){
             init = 1;
             co2Interval(2);
-            co2LedTimeout(2);
+            co2LedTimeout(5);
         }
     }
     
